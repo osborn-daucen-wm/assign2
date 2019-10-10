@@ -1,7 +1,7 @@
 /**
  * 
  * @author Daucen Osborn #1212941663
- * @version 1.0
+ * @version 2.0
  * Class# 85141
  * Assignment #2
  * Description: The purpose of this program is to practice version control
@@ -13,7 +13,11 @@ package cse360assign2;
 
 public class AddingMachine {
 
+	/**
+	 * Initialize variables of total and the string to be displayed.
+	 */
 	private int total;
+	private String displayedNumber = "0";
 	
 	/**
 	 * 
@@ -27,7 +31,7 @@ public class AddingMachine {
 	 * @return total  Returns value of the total variable at the current time.
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -36,6 +40,10 @@ public class AddingMachine {
 	 */
 	public void add (int value) {
 		
+		total += value;
+		
+		displayedNumber = displayedNumber + " + " + value;
+				
 	}
 	
 	/**
@@ -44,6 +52,10 @@ public class AddingMachine {
 	 */
 	public void subtract (int value) {
 		
+		total -= value;
+		
+		displayedNumber = displayedNumber + " - " + value;
+				
 	}
 		
 	/**
@@ -51,7 +63,9 @@ public class AddingMachine {
 	 * @return String  Shows the work of the calculator to be printed.
 	 */
 	public String toString () {
-		return "";
+		
+		return displayedNumber;
+	
 	}
 
 	/**
@@ -59,6 +73,7 @@ public class AddingMachine {
 	 * Resets the total value to 0 so a new value can be calculated.
 	 */
 	public void clear() {
-	
+		total = 0;
+		displayedNumber = "0";
 	}
 }
